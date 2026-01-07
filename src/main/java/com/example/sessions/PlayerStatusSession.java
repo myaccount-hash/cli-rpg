@@ -9,9 +9,9 @@ import com.example.entities.Entity.ItemBox.ItemCount;
  * Playerの所有するItemの一覧を表示するセッション．
  * メニューからItemを選ぶとCommandSessionに推移しCommandを選択できる．
  */
-public class PlayerItemListSession extends Session {
+public class PlayerStatusSession extends Session {
 
-  public PlayerItemListSession(Session parentSession, Entity sessionOwner) {
+  public PlayerStatusSession(Session parentSession, Entity sessionOwner) {
     super("ItemList", "所持アイテム一覧", parentSession, sessionOwner);
     setDisplayText(sessionOwner.getInfoText());
   }
@@ -33,7 +33,7 @@ public class PlayerItemListSession extends Session {
           new Command(itemCount.getDisplayName(), itemCount.item.getDescription()) {
             @Override
             public boolean execute() {
-              new ItemCommandSession(itemCount.item, PlayerItemListSession.this, sessionOwner)
+              new ItemCommandSession(itemCount.item, PlayerStatusSession.this, sessionOwner)
                   .run();
               return true;
             }

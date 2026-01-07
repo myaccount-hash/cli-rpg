@@ -30,7 +30,7 @@ public class MainSession extends Session {
         new Command("items", "所持アイテム一覧を表示") {
           @Override
           public boolean execute() {
-            new PlayerItemListSession(MainSession.this, sessionOwner).run();
+            new PlayerStatusSession(MainSession.this, sessionOwner).run();
             return true;
           }
         });

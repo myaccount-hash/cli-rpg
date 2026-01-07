@@ -49,7 +49,7 @@ public class BattleSession extends Session {
         new Command("status", "ステータスメニュー") {
           @Override
           public boolean execute() {
-            new PlayerItemListSession(BattleSession.this, sessionOwner).run();
+            new PlayerStatusSession(BattleSession.this, sessionOwner).run();
             return true;
           }
         });
