@@ -1,15 +1,26 @@
 
-# 概要
+# CLI RPG
+## 概要
 Javaプログラミングの学習用に製作した実験的なRPGゲームです．
 macOSでのみ動作を確認済です．
 
-# 機能
+## 機能
 - ドラゴンとの戦闘ができます．
 - アイテムを購入・使用できます．
 - MP, HPの概念があります．
 - ターミナル上で動作します．
 
-# 実装
+## 操作画面
+![[battle]](assets/battle.png)
+*BattleSessionの様子．*
+
+![[shop]](assets/shop.png)
+*ShopSessionの様子*
+
+![[status]](assets/status.png)
+*PlayerItemListSessionの様子*
+
+## 実装
 Session抽象クラスを中心に設計されています．主なクラスは以下の通りです．
 - Session: 
   - ゲーム内のビジネスロジックと，ターミナルへの描画を担当．
