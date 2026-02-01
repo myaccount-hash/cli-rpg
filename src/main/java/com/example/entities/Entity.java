@@ -52,8 +52,8 @@ public abstract class Entity {
     this.exp = 0;
 
     // デフォルトの武器と防具を匿名クラスで作成
-    this.weapon = new Weapon("素手", "何も持っていない", 0, this, 0) {};
-    this.armor = new Armor("素肌", "何も着ていない", 0, this, 0) {};
+    this.weapon = new Weapon("-", "何も持っていない", 0, this, 0) {};
+    this.armor = new Armor("-", "何も着ていない", 0, this, 0) {};
 
     // デフォルトで通常攻撃を追加
     this.skills.add(new com.example.actions.NormalAttack(this, null));

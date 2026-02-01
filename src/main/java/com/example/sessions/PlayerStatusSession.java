@@ -4,6 +4,7 @@ import com.example.commands.Command;
 import com.example.commands.QuitCommand;
 import com.example.entities.Entity;
 import com.example.entities.Entity.ItemBox.ItemCount;
+import com.example.utils.Utils;
 
 /*
  * Playerの所有するItemの一覧を表示するセッション．
@@ -13,13 +14,23 @@ public class PlayerStatusSession extends Session {
 
   public PlayerStatusSession(Session parentSession, Entity sessionOwner) {
     super("ItemList", "所持アイテム一覧", parentSession, sessionOwner);
-    setDisplayText(sessionOwner.getInfoText());
+    updateDisplayText();
   }
 
   @Override
   protected void afterCommandExecuted() {
-    setDisplayText(sessionOwner.getInfoText());
+    updateDisplayText();
     updateMenu();
+  }
+
+  private void updateDisplayText() {
+    setDisplayText(
+        sessionOwner.getInfoText()
+            + "\n"
+            + Utils.format("所持金", 8)
+            + ": "
+            + sessionOwner.getGold()
+            + "G");
   }
 
   @Override
